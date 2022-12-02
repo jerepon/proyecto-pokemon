@@ -35,7 +35,7 @@ function App() {
 
    
     <Routes >
-    <Route path='/menu' element={<Paginainicio/>}/>
+    <Route path='/' element={<Paginainicio/>}/>
     <Route path='/desafiomewtwo' element={<Paginamewtwo/>}/>
     <Route path='/duelos' element={<Paginaduelos/>}/>
     <Route path='/captura' element={<Paginacaptura/>}/>

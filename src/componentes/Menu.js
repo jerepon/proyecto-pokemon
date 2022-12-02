@@ -9,8 +9,9 @@ export default class Menu extends React.Component{
         this.state={
             pantalla:true,
             nuevo:true,
-            usuario:'',
-            email:'',
+            usuario:localStorage.getItem("usuario"),
+            email:localStorage.getItem("email"),
+            visor:localStorage.setItem("visor",false)
             
         }
         this.nuevo=this.nuevo.bind(this);
@@ -26,7 +27,10 @@ export default class Menu extends React.Component{
         this.setState({ pantalla:true,
             nuevo:true,
             usuario:'',
-            email:'',})
+            email:'',});
+            localStorage.removeItem("usuario");
+		localStorage.removeItem("email");
+    localStorage.removeItem("visor");
         }
         }
 
@@ -68,7 +72,10 @@ export default class Menu extends React.Component{
 		
 		pantalla:false    
 
-         })
+         });
+         localStorage.setItem("usuario",this.state.usuario);
+	localStorage.setItem("email",this.state.email);
+  localStorage.setItem("visor",true);
          }else{alert('Nombre o Email muy cortos o no validos')}
       
      
@@ -130,7 +137,7 @@ export default class Menu extends React.Component{
              <div className={"container col-12 "+clase1+" align-items-center bg-light pokemon fixed-top"} >
             
                 <h1 className="mx-4">Pokemon<br></br>         Mew-two</h1>
-                <Link to='/menu' className="mx-4 btn celeste" >Menu</Link>
+                <Link to='/' className="mx-4 btn celeste" >Menu</Link>
                 <Link to='/desafiomewtwo' className="mx-4 btn btn-success" >Desafio Mew-two</Link>
                 <Link to='/duelos' className="mx-4 btn naranja">Duelo de entrenadores</Link>
                 <Link to='/captura' className="mx-4 btn rosa">Atrapar Pokemons</Link>
@@ -145,11 +152,8 @@ export default class Menu extends React.Component{
 
 
              </div>
-             <div className={clase1 +' bg bg-danger centrar3 '}>
-                <p className= {clase3+" d-flex justify-content-center align-items-center letra"}>Bienvenido entrenador {this.state.usuario} al mundo pókemon, en este pequeño universo tu primer pókemon sera Píkachu , tendras 5 dólares , 3 pokebolas, y 1 poción. Deberas atrapar recomendadamente 6 pókemons para enfrentar a <br></br>Mew-Two y ganar el juego,podras tambien atraparlo?,
-recuerda que para comprar mas pokebolas deberás pelear con otros entrenadores, que disfrutes el minijuego!!</p>
-
-            </div>
+             
+             
             </div>
            
 
