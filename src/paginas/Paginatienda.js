@@ -1,4 +1,5 @@
 import React from "react";
+import Tienda from "../componentes/tienda";
 
 export default class Paginatienda extends React.Component{
 	
@@ -6,11 +7,8 @@ export default class Paginatienda extends React.Component{
 	render(){
 		return(
 			<>
-             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-			<h2>tienda</h2>
+             
+			<Tienda/>
 			
 			</>
 			)

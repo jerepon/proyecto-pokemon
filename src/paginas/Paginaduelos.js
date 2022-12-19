@@ -1,5 +1,5 @@
 import React from "react";
-
+import Duelo from "../componentes/duelo";
 
 export default class Paginaduelos extends React.Component{
 	
@@ -7,13 +7,8 @@ export default class Paginaduelos extends React.Component{
 	render(){
 		return(
 			<>
-			
-             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-			<h2>Duelos</h2>
-			
+			<Duelo/>
+            
 			
 			</>
 			)

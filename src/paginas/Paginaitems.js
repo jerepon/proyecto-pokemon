@@ -1,4 +1,5 @@
 import React from "react";
+import Items from "../componentes/items";
 
 export default class Paginaitems extends React.Component{
 	
@@ -6,11 +7,7 @@ export default class Paginaitems extends React.Component{
 	render(){
 		return(
 			<>
-             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-			<h2>Items</h2>
+             <Items/>
 			
 			</>
 			)

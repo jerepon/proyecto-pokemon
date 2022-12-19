@@ -1,4 +1,5 @@
 import React from "react";
+import Duelosalvaje from "../componentes/duelosalvaje";
 
 export default class Paginacaptura extends React.Component{
 	
@@ -6,11 +7,8 @@ export default class Paginacaptura extends React.Component{
 	render(){
 		return(
 			<>
-             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-			<h2>captura</h2>
+             
+			<Duelosalvaje/>
 			
 			</>
 			)
