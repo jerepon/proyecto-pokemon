@@ -1,10 +1,34 @@
-import React from "react";
+import React ,{ Component } from "react";
+import UserContext from './Usercontext'
+
+
 export default class Items extends React.Component{
-render(){
+ 
+  static contextType = UserContext
+
+  componentDidMount() {
+    const user = this.context
+
+    console.log(user)}
+
+  
+  render(){
     var items=JSON.parse(localStorage.getItem("items"));
+    
+    
+    
+
+    
+    
+   
     return(
         <>
       <br></br><br></br><br></br><br></br>
+      <div>{user}</div>
+      
+     
+
+      
       <h1 className="bg bg-success">Items </h1>
       <div className="bg bg-danger">
       <h3 className="text text-white"><span className="mr-3">Pokebolas</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png" className="iconitos"></img>{items[0].pokebolas}</h3>

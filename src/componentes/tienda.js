@@ -1,4 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
+import { UserConsumer } from './Usercontext';
+
+
+
+
+
 export default class Tienda extends React.Component{
     constructor(props){
         super(props);
@@ -71,22 +77,30 @@ export default class Tienda extends React.Component{
            
             
         }
+       
         
-    
+        
         
         
     render(){
         let items=[{pokebolas:3,dolares:5,pocion:1}];
 localStorage.setItem("items",JSON.stringify(items));
         var total=this.state.cantidad1*10+this.state.cantidad2*5;
+         
+       
+         
     
         
         
-        
 
-        return(
+        return( <UserConsumer>
             <>
+             
             <br></br><br></br><br></br><br></br>
+           
+            {(props) => {
+          return <div>{props.pokebolas}</div> }}
+          
             
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdynXy8DE7FyFUosogEuUXtbqjlza1nX-BxZDXcMau0we4PbbSzD_d084wXG05C-Vn0O0&usqp=CAU" className="banner"></img>
             <div className="container-fluid bg bg-danger ">
@@ -106,6 +120,7 @@ localStorage.setItem("items",JSON.stringify(items));
 
             </div>
             </>
+            </UserConsumer>
         )
     }
 }

@@ -1,6 +1,6 @@
-
 import './App.css';
 import Menu from './componentes/Menu';
+
 
 import Paginainicio from './paginas/Paginainicio';
 import Paginamewtwo from './paginas/Paginamewtwo';
@@ -12,8 +12,14 @@ import Paginatienda from './paginas/Paginatienda';
 import Paginacentro from './paginas/Paginacentro';
 
 
-import {Routes,Route,BrowserRouter as Router} from "react-router-dom";
-import React from 'react';
+import {Routes,Route,BrowserRouter as Router, useInRouterContext} from "react-router-dom";
+import React  from 'react';
+import { UserProvider } from './componentes/Usercontext';
+
+
+
+
+
 
 /////////pokemonsrepositorio
       let pokemonsrepo=[{nombre:"Squirtle",hp:20,tipo:"agua", Image:"/img/squirtle.jpg"},{nombre:"Charmander",hp:20,tipo:"fuego", Image:"/img/charmander.jpg"},{nombre:"Bulbasaur",hp:40,tipo:"hoja", Image:"/img/bulbasaur.jpg"},
@@ -56,12 +62,13 @@ localStorage.setItem("pokerival10",JSON.stringify(pokemonsrival10));
 
 
 function App() {
+  const user = { pokebolas:3 }  
   
-
   return (
     <>
    
-  
+   <UserProvider value={user}>
+   
     <Router>
     
     
@@ -71,6 +78,7 @@ function App() {
       
       <div className='pt-4'>
     <div className="container-fluid pt-5 introfondo  ">
+    
 
    
     <Routes >
@@ -84,6 +92,7 @@ function App() {
     <Route path='/centro' element={<Paginacentro/>}/>
     
     </Routes>
+    
    
     
    
@@ -92,6 +101,7 @@ function App() {
     </div>
     
       </Router>
+      </UserProvider>
     </>
   );
 }

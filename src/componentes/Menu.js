@@ -159,7 +159,7 @@ export default class Menu extends React.Component{
 
                 <div className= {clase+"   bg bg-success centrar2"}>
                 <h1>Empieza tu nueva aventura</h1>
-                <form clasName='form-group'>
+                <form className='form-group'>
 
                  <label>Nombre</label>
                  <input type='text' className="form-control" onChange={this.cambiovalor}></input>
